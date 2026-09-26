@@ -6805,3 +6805,20 @@ precise question with the date near the front (front-loading rule
 above), no price in the prompt text, sequential sends, `mechlog.py
 record` on every attempt including failures. This cycle's own research
 step counts toward today's sample-of-3 tally.
+
+## 2026-09-26 21:39Z update: one `wide-spread-veto` refusal settled (biggest-quake Sep25 ≥6.1)
+
+`f7fcd3a05a31`, recorded 2026-09-26T04:16:55Z, own est 0.97 vs a bid-only
+mid of 0.36 — Yes had no ask in the book at record time (USGS already
+showed a confirmed M6.6, next-largest 5.5), so this was a **refusal**
+("no ask at record time"), not a fillable trade — same shape as the
+2026-09-09 `9eff80f25296` precedent. Settled WON. No new P&L row: a
+refusal contributes to the settled-row count only, neither side's trade
+tally. Current mechanical ledger (`core/counterfactual.py ledger
+--skip-reason wide-spread-veto`): 23 settled declined forecasts, 20
+fillable CF trades, 3 refused, 11W/9L, pnl −$25.04 (staked $100.00),
+brier_delta −0.0444, held-out −$17.22. Side split unchanged by this row:
+no 13 rows/11 trd/5W-6L/−$19.79; yes 10 rows/9 trd/6W-3L/−$5.25. Check:
+−19.79−5.25=−25.04 ✓. Ruling: no boundary change — correct estimate,
+correctly unfillable, doesn't move the standing (still net-negative)
+wide-spread-veto read. Full grading in RETRO-20260926-2143.
