@@ -2922,6 +2922,17 @@ in weather. Market-agrees re-pricing is NOT an anchor: on a trending
 count the market re-pricing toward your prior is what being late looks
 like.
 
+**Pace must be observed, not inferred (RETRO-20260926-2015, MrBeast
+v9QtM6qnG50 wk1).** The 16:19Z Sep25 60-70M read (92a9d80fc3c3, 0.59 vs
+0.3835) had a count (RYD 65.6M) but INFERRED the pace (~1.6M/day from a
+day-2 summary); the first two dated reads 4h apart then showed 0.30M/h
+(~7M/day) and the market's 70-80M lean won. The pace in "dated count plus
+observed pace" means two dated reads of the same source at least ~3h
+apart; with one read, the row is still `no-anchor`/veto territory. Also
+measured: RYD (returnyoutubedislikeapi) lagged the YouTube watch page by
+only ~19k views at 20:20Z Sep25, so a RYD read stamped with its fetch time
+counts as a dated read when YouTube 429s.
+
 **2026-09-04 update (LIGHT tick 06:29Z, settled by resolve.py; 4 rows,
 two OpenAI Astra release-timeline markets, two sequential snapshots
 each):**
@@ -4604,6 +4615,32 @@ match — the mechanical ledger is authoritative for every ruling and
 gate; the hand table is the narrative index. An operator proposal to
 make `reconcile` units-aware and to extend its B-check beyond
 outside-view-veto is filed in journal/proposals.md (2026-09-23 pass).
+
+**2026-09-26 20:1xZ update (FULL cycle, cloud; MrBeast v9QtM6qnG50 wk1
+settled 70-80M Yes: 2 `outside-view-veto` + 2 `wide-spread-veto` rows,
+see RETRO-20260926-2015.)**
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| MrBeast wk1 60-70M (`92a9d80fc3c3`) | 0.59 / 0.3835 | Yes | +0.198 | No | -5.00 |
+| MrBeast wk1 70-80M (`8adb0a184d87`) | 0.40 / 0.625 | No | +0.210 | Yes | -5.00 |
+| MrBeast wk1 60-70M wide-spread (`d842a0332a5a`) | 0.18 / 0.094 | Yes | +0.045 | No | -5.00 |
+| MrBeast wk1 70-80M wide-spread (`5badc7031d2c`) | 0.82 / 0.9045 | No | +0.040 | Yes | -5.00 |
+
+Outside-view-veto net this batch: **-$10.00** (0W/2L). Mechanical ledger
+after these rows: 175 rows / 167 trades / 71W-96L / +$77.41 / dBrier
++0.0332 / held-out +$71.52 (was 173/165/71W-94L/+$87.41). Side split: no
+123/115/53W-62L/+$38.21 (adds 8adb); yes 52/52/18W-34L/+$39.20 (adds
+92a9). Check: 38.21 + 39.20 = 77.41.
+Wide-spread-veto: **-$10.00** (0W/2L). Ledger now 22 rows / 20 trades /
+11W-9L / -$25.04 / dBrier -0.0279 / held-out -$17.22 (was 20/18/11W-7L/
+-$15.04). Side split: no 13/11/5W-6L/-$19.79 (adds 5badc); yes 9/9/6W-3L/
+-$5.25 (adds d842). Check: -19.79 + -5.25 = -25.04.
+
+Ruling: no boundary change. Both vetoes kept real losses off the ledger;
+the outside-view pair is the textbook undated-count case the
+cumulative-count anchor rule exists for (the est rested on an inferred,
+not observed, pace).
 
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
