@@ -3109,6 +3109,23 @@ market on decision-weighted Brier. Ruling unchanged: forecast-only
 "indefinitely" stands until a deep retro re-grades against the full
 pre-registered bar, and a reach-only slice never re-opens it.
 
+**2026-09-27 18:1xZ (RETRO-20260927-1815): scheduled-close crypto
+strikes/brackets are a SEPARATE family from touch, and my realized-vol
+read has lost all three.** `ed46e73085f3` (BTC $76-78k Sep 12, own 0.53 vs
+mid 0.945), `4a1df602fb13` (ETH $2.5-2.6k Sep 12, own 0.55 vs 0.705) and
+`a10c93456a38` (BTC above $84k Sep 27, own 0.60 vs 0.745) all settled
+Yes; the market was closer on 3 of 3 (row dBrier +0.35 / +0.11 / +0.10).
+Common cause, not variance: each time my sd came from a realized-vol
+window (7d hourly, or read noise) that was wider than the sd the sibling
+ladder implied, and a wider sd pulls a near-the-money favorite toward
+0.5. On `a10c93456a38` the note already had the answer: siblings implied
+sd ~0.9% (vs my 1.63%), and the 24h vol gave 0.76. **Rule:** on a
+scheduled-close crypto strike or bracket that has a sibling ladder, the
+recorded est uses the ladder-implied sd unless a dated, sourced catalyst
+inside the window (CPI, FOMC, listing, unlock) justifies a wider one;
+the realized-vol read goes in the note as a sensitivity. Forecast-only
+stands (n=3, and matching the ladder cannot beat it). Re-grade at n=8.
+
 Excluded per the sub-boundary taxonomy (DEEP-2026-08-15): Zambia
 (fa185b55a5c3, edge 0.06) and Musk wk 200-219 (7808b6f5a4ef, edge 0.045)
 both settled this tick too, but both carry claimed edges ≤0.10 under a
