@@ -6822,3 +6822,27 @@ no 13 rows/11 trd/5W-6L/−$19.79; yes 10 rows/9 trd/6W-3L/−$5.25. Check:
 −19.79−5.25=−25.04 ✓. Ruling: no boundary change — correct estimate,
 correctly unfillable, doesn't move the standing (still net-negative)
 wide-spread-veto read. Full grading in RETRO-20260926-2143.
+
+## DEEP-2026-09-27 additions
+
+**One label for view-count brackets: `video-views`.** The MrBeast
+v9QtM6qnG50 wk1 family (settled 2026-09-26) was recorded under three
+labels in two days: `youtube-views` (92a9d80fc3c3, 8adb0a184d87),
+`social-media-views` (7a449ce9, 675f8739, d842a0332a5a, 5badc7031d2c,
+4296dbe5, 2437bc1e) and `video-views` (20a3bf4a, 32042307). All earlier
+rows (2026-08-28 to 09-05, n=7) used `video-views`. Split labels break
+the per-category brier_delta that the category bar reads. From now on,
+any "will video X reach N views" bracket is `video-views`. Post and tweet
+COUNTS stay `social-media-postcount`. Old rows are not rewritten
+(forecasts.jsonl is append-only). Pool the three labels by hand when you
+quote the cell.
+
+**Refusal rows distort a veto ledger's dBrier.** The wide-spread-veto
+ledger went from dBrier −0.0279 to −0.0444 on one row, f7fcd3a05a31. That
+row is a refusal (no ask, bid-only mid 0.36 against an already-confirmed
+M6.6). Its market prob is not a price anyone could trade at, so it adds
+−0.409 of Brier "edge" that no fill could have realized. When quoting
+wide-spread-veto or outside-view-veto dBrier for a boundary decision,
+quote it WITH and WITHOUT refusals. The P&L column already excludes them.
+The veto boundary stays unchanged. Its fillable P&L is still −$25.04 over
+20 trades.

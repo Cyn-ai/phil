@@ -3524,3 +3524,35 @@ regexes, subclass auto-tagger.
 gate 1 fails, f4 dBrier +0.0363). 0 bets placed, 3 settled WON (+$4.43),
 4 open. No reverts; one consolidation rule (unmeasured shades) and a
 research-allocation re-rank capping social-media-postcount.
+
+## 2026-09-27 — deep-retro status pass
+
+Full detail in journal/retros/DEEP-2026-09-27.md.
+
+Hourly-agent proposals this window: none new.
+
+- **Mech + Pearl Connect (ESCALATED, carried):** last mech-requests row
+  still "insufficient POL for gas (0.1404 POL, tx ~0.160) ... prepaid
+  mech balance exhausted". R1 daily sample missed 4 days running; no
+  real twins possible. Operator runner is back up (23:49Z Sep 26), so
+  the fix is topping up the service safe with POL. Status: ENDORSED
+  (operator act).
+- **Operator runner silent (09-26 informational):** ticks resumed
+  2026-09-26 23:49Z. Status: RESOLVED.
+- **NEW (operator, core/counterfactual.py): exclude refusal rows from
+  the brier_delta column (or print a second column without them).** A
+  bid-only/ask-only mid is not a market probability; f7fcd3a05a31
+  (quake, no ask, bid-only mid 0.36) alone moved wide-spread-veto
+  dBrier -0.0279 -> -0.0444. PnL already excludes refusals; dBrier
+  should match. Status: PROPOSED (operator).
+- Funnel-weld CI check; ODDS_API_KEY on both runners: PROPOSED
+  (operator), carried.
+
+Carried unchanged: screener quota vs two runners, per-fold dBrier
+column, real-twin allowed-classes, settled_ts determinism, wire-nonce
+401, mech delivery-size, lease writability, screener quota refund,
+watch.py shape regexes, subclass auto-tagger.
+
+**Status:** relaxation fork NOT MET (12th; f4 fold pnl -3.34 after
+MrBeast pair). 0 bets placed, 0 settled, 4 open (RBA No effectively
+lost). No reverts; two playbook hygiene rules.
