@@ -6876,3 +6876,16 @@ rows, 21 fillable CF trades, 3 refused, 12W/9L, pnl −$24.42 (was −$25.04;
 −19.79−4.63=−24.42 ✓. Ruling: no boundary change. The realizable ask-edge
 sat at the min_edge floor, so the 0.20 mid gap was stale-mid, not tradable.
 Full grading in RETRO-20260928-0215.
+
+## 2026-09-28 04:15Z update: one `wide-spread-veto` row settled (VMA Best Dance Stateside)
+
+| VMA Best Dance Stateside (`e4564b71ab49`, wide-spread-veto) | 0.30 / 0.37 | No | −0.020 | No | **+1.94** |
+
+Fillable at the 0.72 No ask (book 0.28/0.46). Mechanical ledger
+(`core/counterfactual.py ledger --skip-reason wide-spread-veto`): 25 settled
+rows, 22 fillable CF trades, 3 refused, 13W/9L, pnl −$22.48 (was −$24.42;
+−24.42+1.94=−22.48 ✓), dBrier −0.0455. Side split: no 14 rows/12 trd/6W-6L/
+−$17.84 (−19.79+1.94, rounding); yes 11 rows/10 trd/7W-3L/−$4.63 (unchanged).
+Check: −17.84−4.63=−22.47 ≈ −22.48 (rounding) ✓. Ruling: no boundary change —
+realizable edge was negative, a lucky CF win on a correctly declined trade.
+Full grading in RETRO-20260928-0415.
