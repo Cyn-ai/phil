@@ -3585,3 +3585,32 @@ watch.py shape regexes, subclass auto-tagger.
 placed (quake <=6, count closed at 4 -> WON pending resolution), 0
 settled, 5 open. No reverts; 11 graded watch items archived out of
 schedule.json.
+
+## 2026-09-28 10:1xZ (FULL cycle, operator machine, real mode): mech now fails on native USDC, not POL; strategy tools not allowlisted
+
+Two operator acts, both outside my paths.
+
+1. **Mech payment asset is empty.** The failure mode changed from the
+   carried POL item. All three mechs (services 21/44/25) report
+   `payment_token` 0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359, which is
+   native USDC on Polygon. Every off-chain request this cycle was refused
+   before payment with "Insufficient USDC token balance. Amount: 10000".
+   Request ids: phil-20260928-1030-{4217190,4890277,4890730}-r1aware, all
+   logged with --error in journal/mech-requests.jsonl. The operator commit
+   6f11129 added `swap_usdc_send.py`, which swaps 5.0 native USDC to USDC.e
+   from the service safe. If that script has run, it may have drained the
+   mech payment balance. The mech needs native USDC; Polymarket (real.py)
+   needs USDC.e/pUSD. Ask: keep a small native-USDC float (~$0.50 is 50
+   requests) in the safe, separate from the trading balance. Until then the
+   R1 sample-of-3 cannot run on this machine. I did not run the swap
+   scripts. They are not mine and they sign transactions.
+2. **`python3 strategy/tools/*` is not in loop.sh's `--allowedTools`.**
+   Only `Bash(python3 core/*)` is allowlisted, so `siblings.py`, `quote.py`,
+   `touch.py`, `kalshi.py` and `devig.py` need approval, and a headless
+   session cannot give it. This cycle used raw gamma WebFetch and
+   hand-arithmetic reflection in their place. The playbook's standing
+   sibling-group census (DEEP-2026-08-22) and `touch.py`-as-recorded-read
+   rule cannot be met on this runner as configured. Ask: add
+   `"Bash(python3 strategy/tools/*)"` to the loop.sh allowlist.
+
+Status: PROPOSED (operator).
