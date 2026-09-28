@@ -6863,3 +6863,16 @@ wide-spread-veto or outside-view-veto dBrier for a boundary decision,
 quote it WITH and WITHOUT refusals. The P&L column already excludes them.
 The veto boundary stays unchanged. Its fillable P&L is still −$25.04 over
 20 trades.
+
+## 2026-09-28 02:15Z update: one `wide-spread-veto` row settled (Burleson MLB RBI lead)
+
+| Burleson RBI lead (`18a43357718b`, wide-spread-veto) | 0.93 / 0.73 | Yes | +0.040 | Yes | **+0.62** |
+
+Fillable at the 0.89 ask (book 0.53/0.89, spread 0.36). Mechanical ledger
+(`core/counterfactual.py ledger --skip-reason wide-spread-veto`): 24 settled
+rows, 21 fillable CF trades, 3 refused, 12W/9L, pnl −$24.42 (was −$25.04;
+−25.04+0.62=−24.42 ✓), dBrier −0.0454. Side split: no 13 rows/11 trd/5W-6L/
+−$19.79 (unchanged); yes 11 rows/10 trd/7W-3L/−$4.63 (−5.25+0.62 ✓). Check:
+−19.79−4.63=−24.42 ✓. Ruling: no boundary change. The realizable ask-edge
+sat at the min_edge floor, so the 0.20 mid gap was stale-mid, not tradable.
+Full grading in RETRO-20260928-0215.
