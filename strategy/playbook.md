@@ -6918,3 +6918,16 @@ Full grading in RETRO-20260928-0415.
   exclusions out of the prompt (`request_context.description` carries
   the rules verbatim) and put the subject noun phrase in the clause the
   parser picks. Read `serper_response.searchParameters.q` on each delivery.
+- **Reading rule (2026-09-28 17:5xZ): `ai-release` = `ai-model-release`.**
+  Supersede row `2e74a4e5daee` (Sonnet exact-Sep28, replaces
+  `53fbe6953076`) was recorded as `ai-release`, while every other row in
+  the family uses `ai-model-release`. It was noticed after the write, the
+  same failure as the `32f25ca85db8` rule above. Pool the two labels by
+  hand when you quote the cell. On a `--supersede`, copy the category from
+  the row being replaced; do not retype it.
+- **Mech search can return the market's own page (2026-09-28 17:5xZ).** On
+  Canada GDP 4391818, all three deliveries (R1-aware, R1-blind, GPT-4.1)
+  ranked polymarket.com's event page first, so the "blind" R1 read of 0.65
+  had seen the crowd's 70%. R1-aware reported p_independent == p_yes == 0.70.
+  When the top hit is polymarket.com or lines.com, do not grade a blind
+  delivery as independent of the price.
