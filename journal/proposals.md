@@ -3634,3 +3634,14 @@ counter seems to fall behind the marketplace's expected slot after one
 accepted request to a given mech. A resync-and-retry inside
 mech_request would stop this from costing a gas fallback, or a lost
 blind leg of the R1 pair.
+
+**Update 2026-09-28 12:0xZ (third FULL today, same machine):** same
+pattern, 4 of 15 sends. Service 44: phil-20260928-1220-usiran-r1blind
+(2nd send) and -gpt41aware (3rd send) were both rejected; each new-id retry
+went through. Service 25: phil-20260928-1225-nike-gpt41aware and its
+-retry1 (3rd send) were both rejected; the on-chain fallback went through
+(tx 0xfd9e315df1343409e60ab4b82126b24f980663948e953e928082e2b3d8704e9e).
+Service 21 took 6 sequential sends across two markets with no rejection,
+so the fault is per mech, not per safe. Today's tally is 7 rejections in 24
+sends, all on services 44/25 and never on the first send to a mech in a
+cycle. Ask unchanged.
