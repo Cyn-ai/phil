@@ -3556,3 +3556,32 @@ watch.py shape regexes, subclass auto-tagger.
 **Status:** relaxation fork NOT MET (12th; f4 fold pnl -3.34 after
 MrBeast pair). 0 bets placed, 0 settled, 4 open (RBA No effectively
 lost). No reverts; two playbook hygiene rules.
+
+## DEEP-2026-09-28 status pass
+
+Full detail in journal/retros/DEEP-2026-09-28.md.
+
+Hourly-agent proposals this window: none new.
+
+- **Mech + Pearl Connect (ESCALATED, carried):** last mech-requests row
+  2026-09-24T01:40Z, still "insufficient POL for gas ... prepaid mech
+  balance exhausted". R1 sample missed 5 days running. Status: ENDORSED
+  (operator act: top up the service safe with POL).
+- **NEW informational: operator runner silent again.** Last
+  operator-machine tick in cycles.log is 2026-09-27T06:12Z (~22h); all
+  ticks since are cloud. Paper learning unaffected; mech/real paths
+  cannot run. Status: INFORMATIONAL.
+- **Refusal-row dBrier column (core/counterfactual.py):** PROPOSED
+  (operator), carried.
+- Funnel-weld CI check; ODDS_API_KEY on both runners: PROPOSED
+  (operator), carried.
+
+Carried unchanged: screener quota vs two runners, per-fold dBrier
+column, real-twin allowed-classes, settled_ts determinism, wire-nonce
+401, mech delivery-size, lease writability, screener quota refund,
+watch.py shape regexes, subclass auto-tagger.
+
+**Status:** relaxation fork NOT MET (13th; no OVV settlements). 1 bet
+placed (quake <=6, count closed at 4 -> WON pending resolution), 0
+settled, 5 open. No reverts; 11 graded watch items archived out of
+schedule.json.

@@ -6889,3 +6889,23 @@ rows, 22 fillable CF trades, 3 refused, 13W/9L, pnl −$22.48 (was −$24.42;
 Check: −17.84−4.63=−22.47 ≈ −22.48 (rounding) ✓. Ruling: no boundary change —
 realizable edge was negative, a lucky CF win on a correctly declined trade.
 Full grading in RETRO-20260928-0415.
+
+## DEEP-2026-09-28 notes
+
+- **Settled watch items move to `strategy/watch-archive.md`.** Once every
+  id a `schedule.json` watch item carries has settled AND been graded in
+  a retro, move the item verbatim to the archive instead of leaving an
+  "ARCHIVED:" stub in the file every tick reads. Eleven items went today
+  (schedule.json 82KB -> 69KB). Keep an item while any joint grading it
+  names is still owed (the Sweden trio waits on e746d7e1ba99; the Sep 20
+  joint set waits on its last open leg).
+- **Crypto touch keeps drifting toward the market.** The cell went
+  −0.0307 (n=16, DEEP-2026-09-24) to **−0.0204 (n=19)**. All three
+  Sep 21-27 weekly touch rows settled this window with own further from
+  the outcome than the mid (efa75442 +0.009, 6f5b7cf4 +0.006, fd59af69
+  BTC $88k own 0.41 vs 0.285, +0.087). This confirms the 2026-09-24
+  retirement of touch rows as a research priority. Do not re-open it on
+  the cell's still-negative sign: it is shrinking toward zero with n.
+- **Scheduled-close crypto uses ladder-implied sd (5eed485): kept.** The
+  rule fixes a real method error (3 of 3 realized-vol reads were wider
+  than the ladder and lost to it). Forecast-only stands; re-grade at n=8.
