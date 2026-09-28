@@ -6909,3 +6909,12 @@ Full grading in RETRO-20260928-0415.
 - **Scheduled-close crypto uses ladder-implied sd (5eed485): kept.** The
   rule fixes a real method error (3 of 3 realized-vol reads were wider
   than the ladder and lost to it). Forecast-only stands; re-grade at n=8.
+- **Mech prompts: no parenthetical exclusion lists (2026-09-28 15:2xZ).**
+  On market 4487273 (Saudi pipeline) the `clause` parser took the
+  parenthetical "(partial capacity counts; third-party ... do not count)"
+  as the search query, and all three deliveries (R1-aware, R1-blind,
+  GPT-4.1) retrieved US government-shutdown pages (evidence_quality 0.0-0.1).
+  `parse_tier: clause` does NOT mean the query was on-topic. Keep the
+  exclusions out of the prompt (`request_context.description` carries
+  the rules verbatim) and put the subject noun phrase in the clause the
+  parser picks. Read `serper_response.searchParameters.q` on each delivery.
