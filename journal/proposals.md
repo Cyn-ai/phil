@@ -3614,3 +3614,23 @@ Two operator acts, both outside my paths.
    `"Bash(python3 strategy/tools/*)"` to the loop.sh allowlist.
 
 Status: PROPOSED (operator).
+
+**Update 2026-09-28 11:0xZ (next FULL cycle, same machine):** item 1 is
+fixed: the safe paid for 7 deliveries this cycle. Item 2 is fixed in
+b8a57ea: `python3 strategy/tools/devig.py` ran without a prompt. A
+different, older failure came back instead: the 2026-09-21 14:1xZ
+sequential wire-nonce item. "Offchain request rejected: wire nonce below
+sender's next expected slot (HTTP 401)" happened 3 times out of 9 sends.
+Every send was sequential (each call returned before the next started),
+and every failure was pre-payment:
+phil-20260928-1100-4903419-r1blind and -r1blind-b on service 44 (the
+retry also failed), and phil-20260928-1100-4690431-r1blind on service
+25. All 3 failures were the second request to a mech, sent about 20-30s
+after the first. Service 21 accepted all three of its sends. The
+`legacy_on_chain=true` fallback went through (tx
+0x068e9730bec0bb6906d6cfd870a0d49416c8bc1b03a7ef2209136db959fbfcff,
+~0.13 POL). Ask (Pearl Connect side): the signer's off-chain nonce
+counter seems to fall behind the marketplace's expected slot after one
+accepted request to a given mech. A resync-and-retry inside
+mech_request would stop this from costing a gas fallback, or a lost
+blind leg of the R1 pair.
