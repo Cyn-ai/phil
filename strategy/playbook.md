@@ -6958,3 +6958,13 @@ Full grading in RETRO-20260928-0415.
   proves nothing either way. Default: put the flash's bracket at no less than the mid
   unless a sourced revision history (StatCan table 36-10-0434 vintages,
   ALFRED) says otherwise. Keep it forecast-only, `unvalidated-method`.
+- **Same-day close markets: a mech read counts only if its source is
+  post-close (RETRO-20260929-2130).** On SPY Sep 29 > 765 (f7077b57a9a7),
+  R1-aware, R1-blind and GPT-4.1-aware all took Yahoo's intraday "Sep 29 ...
+  765.21" row as the close. The aware tools returned 0.995 (Brier 0.99 each),
+  and R1-aware's p_independent equalled p_yes while it was shown 0.165. My
+  ladder-implied sd reads tied the mid on the pair (net +0.001). For
+  equities-close and scheduled-close crypto, when a delivery's cited row is
+  not timestamped after the close, record it and give it zero weight in
+  est-prob. R1-aware identical-field-vector flag: n_event=2 (RBI/Moro,
+  SPY 760/765).
