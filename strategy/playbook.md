@@ -6949,3 +6949,12 @@ Full grading in RETRO-20260928-0415.
   delivery repeats an identical round p across mechs and times, note it in
   the cycle summary as a possible default output. Do not treat it as a
   read. Grade it as a tool finding only once n_event >= 3.
+- **Flash-anchored GDP brackets: do not add unsourced revision width
+  (RETRO-20260929-1640).** On Canada July GDP (2185c840cf33), the first print
+  (0.0%) matched the Aug 28 flash exactly. My recalled flash-to-first-print
+  shading to 0.60 lost to the 0.70 mid (dBrier +0.070). The UMich Sep
+  recalled-revision model went 2/2 against the mid, but that was one print
+  (effective n=1). So recalled revision widths are now 1-1 by event, which
+  proves nothing either way. Default: put the flash's bracket at no less than the mid
+  unless a sourced revision history (StatCan table 36-10-0434 vintages,
+  ALFRED) says otherwise. Keep it forecast-only, `unvalidated-method`.
