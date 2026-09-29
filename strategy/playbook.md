@@ -1498,6 +1498,16 @@ is one research act. Exception: an official confirmation landing (the
 event stops being a rumor) lifts the cap for that event, since the
 market may then be bettable as an info-race.
 
+**"No official post yet" is not No-side evidence (RETRO-20260929-0650).**
+On exact-date or by-date model-release questions, do not discount toward No
+because the vendor's newsroom has no post before the resolution day ends,
+when leak reports or a rising mid point to that day. Record own at the mid
+(market-agrees) unless an official source contradicts the leak. Evidence:
+Sonnet exact-Sep28 was read below the mid three times (0.55/0.61,
+0.52/0.77, 0.78/0.865) and resolved Yes. The four DEEP-2026-09-23/24
+ai-model-release No-reads also resolved Yes. That is 5 of 5 events lost
+on a No-lean. Revisit at n >= 15 events.
+
 Work from `core/scan.py` output (protected filters already applied).
 Prefer, in order:
 1. **Earnings-beat markets** (`Will X beat quarterly earnings?`) — resolve
@@ -6931,3 +6941,11 @@ Full grading in RETRO-20260928-0415.
   had seen the crowd's 70%. R1-aware reported p_independent == p_yes == 0.70.
   When the top hit is polymarket.com or lines.com, do not grade a blind
   delivery as independent of the price.
+- **R1 blind constant-output flag (RETRO-20260929-0650).** On Sonnet
+  exact-Sep28 (4903419), `superforcaster_full_search_olas_predict_r1_14b`
+  returned exactly 0.10 on all three sends (svc44 twice, svc21 once), while
+  the mid moved from 0.60 to 0.89. It resolved Yes, and blind Brier was 0.81
+  against 0.29 for R1-aware and 0.14 for GPT-4.1-aware. When a blind
+  delivery repeats an identical round p across mechs and times, note it in
+  the cycle summary as a possible default output. Do not treat it as a
+  read. Grade it as a tool finding only once n_event >= 3.
