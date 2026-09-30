@@ -28,3 +28,5 @@ needs to read this file.
 
 - MrBeast wk1 veto PAIR ARCHIVED: v9QtM6qnG50 wk1 settled 70-80M Yes (resolve.py 2026-09-26 20:1xZ), graded in RETRO-20260926-2015. Both outside-view-veto rows (92a9d80fc3c3, 8adb0a184d87) and both wide-spread-veto rows (d842a0332a5a, 5badc7031d2c) would have lost (-$10 CF each gate); playbook tables extended same-commit; lesson: pace must be observed from two dated reads.
 
+
+- Trump renames AI by Sep 30 ARCHIVED: 52e53039c9d9 (own 0.40 vs 0.485, process-shape-bar) settled Yes 2026-09-29 23:22Z, graded in RETRO-20260930-0125 (dBrier +0.095). EO "Inaugurating The Era Of Super Intelligence" signed Sep 29 at the America.gov event named in the Sep 28 note. Sibling 6cafb1afc950 (Robot, No) graded in RETRO-20260929-2130. Lesson: a scheduled in-window venue outweighs "not signed yet"; all three mechs followed a stale PM "30%" summary.

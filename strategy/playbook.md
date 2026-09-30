@@ -6940,7 +6940,13 @@ Full grading in RETRO-20260928-0415.
   ranked polymarket.com's event page first, so the "blind" R1 read of 0.65
   had seen the crowd's 70%. R1-aware reported p_independent == p_yes == 0.70.
   When the top hit is polymarket.com or lines.com, do not grade a blind
-  delivery as independent of the price.
+  delivery as independent of the price. **n_event=2 (RETRO-20260930-0125):**
+  on Trump renames AI (52e53039c9d9) all three tools read a stale
+  Polymarket summary ("30%") and returned 0.20-0.25 against a live 0.485
+  mid. R1-aware was sent the live price in `request_context` and still
+  followed the stale number. It resolved Yes. A cached market page can
+  carry an out-of-date price, so it contaminates the aware tools too, not
+  only the blind one.
 - **R1 blind constant-output flag (RETRO-20260929-0650).** On Sonnet
   exact-Sep28 (4903419), `superforcaster_full_search_olas_predict_r1_14b`
   returned exactly 0.10 on all three sends (svc44 twice, svc21 once), while
@@ -6968,3 +6974,31 @@ Full grading in RETRO-20260928-0415.
   not timestamped after the close, record it and give it zero weight in
   est-prob. R1-aware identical-field-vector flag: n_event=2 (RBI/Moro,
   SPY 760/765).
+- **Gov-act-by-date: a scheduled in-window venue outweighs "not signed
+  yet" (RETRO-20260930-0125, n=1, observation).** On Trump renames AI
+  (52e53039c9d9) I shaded to 0.40 below the 0.485 mid because nothing had
+  been signed by Sep 25. My own note had named the Sep 29 America.gov AI
+  launch as a plausible signing venue, and the EO was signed there (dBrier
+  +0.095). When research finds a scheduled event inside the window that
+  fits the act, do not go below the mid on absence alone. The
+  process-shape bar still keeps the shape forecast-only.
+
+## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| 10y par hits 5.25% Sep (`88aacfa7cbcd`) | 0.62 / 0.34 | Yes | +0.25 | Yes | **+8.51** |
+
+Fillable at the 0.37 ask (book 0.31/0.37, liq 141). $5 / 0.37 = 13.51
+shares, so 13.51 - 5.00 = +8.51. Post-restart mechanical ledger
+(`core/counterfactual.py ledger --skip-reason outside-view-veto`; the
+tool now reads only the book restarted 2026-09-28): 1 row / 1 trade /
+1W-0L / +$8.51 / dBrier -0.2912, side yes. Pre-restart hand total
+re-summed with this row: 176 rows / 168 trades / 72W-96L / +$85.92 (was
+175/167/71W-96L/+$77.41; 77.41 + 8.51 = 85.92). Side split: no
+123/115/53W-62L/+$38.21 (unchanged); yes 53/53/19W-34L/+$47.71 (adds
+88aa). Check: 38.21 + 47.71 = 85.92. Sub-class: countable-metric
+(measured live print + measured sd, self-model). Ruling: no boundary
+change. One event, and the relaxation fork needs 40. This was a Yes-side
+self-model win, against that side's 18W-34L record. Full grading in
+RETRO-20260930-0125.
