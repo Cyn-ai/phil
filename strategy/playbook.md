@@ -6982,6 +6982,33 @@ Full grading in RETRO-20260928-0415.
   +0.095). When research finds a scheduled event inside the window that
   fits the act, do not go below the mid on absence alone. The
   process-shape bar still keeps the shape forecast-only.
+- **Revision-day econ ladders: widen, cap buckets, stay forecast-only
+  (RETRO-20260930-2045, n=1 event, observation).** BEA printed Aug core PCE
+  at 3.0 YoY / 0.2 MoM, with a methodology revision in the same release. The
+  old-basis benchmarks (Cleveland 3.40 / 0.27, consensus 3.3 / 0.3) missed
+  by 0.3-0.4. The revision camp (GS about 3.2, Sep 16 chair statement "about
+  3.2") had the right direction and was still 0.2 high. My sd of 0.08 put
+  0.50 on 3.2, and all four PCE rows lost (6014224ceaa1, a6d22ac6adc0,
+  bcdd0e1e7263, dd32caa8f575). When a release carries a methodology or
+  comprehensive revision, old-basis nowcasts do not locate the bracket: use
+  sd >= 0.15 on YoY, put no more than about 0.30 on any single bucket, and
+  keep the ladder forecast-only. The Sep 16 chair-statement pre-registration
+  (section "PCE brackets" above) closes on its "if wrong" branch: "running
+  at about" is not a bracket anchor on a revision-day print.
+- **Fetch the exact resolver URL and view (RETRO-20260930-2045).** Xiaomi
+  best-Chinese-model (70c31f2b465e) and third-best-lab (7908401ad956)
+  resolved on arena.ai's no-style-control view. The default page is
+  style-controlled and ranks differently (Xiaomi #6 vs #3 among labs).
+  Reading the resolver's own view gave 0.93 / 0.91, and both won. All three
+  mech tools read the default view, and R1 returned 0.10 / 0.05 on the lab
+  row. Before any leaderboard or ranking estimate, fetch the URL, tab and
+  toggles named in the rules, and quote the view in the note.
+- **Weather: read raw METAR groups, not the obhistory summary
+  (RETRO-20260930-2045, n=1).** On Seattle Sep 29 (258900481699) the
+  WebFetch summary of forecast.weather.gov obhistory said "no
+  precipitation". The raw KSEA METARs (P0001 at 0153Z, 60001 at 0253Z,
+  inside the LST climate day) showed 0.01 in, and the market resolved Yes.
+  Take precipitation from the P/6-groups of the raw METARs.
 
 ## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
 
@@ -7002,3 +7029,23 @@ re-summed with this row: 176 rows / 168 trades / 72W-96L / +$85.92 (was
 change. One event, and the relaxation fork needs 40. This was a Yes-side
 self-model win, against that side's 18W-34L record. Full grading in
 RETRO-20260930-0125.
+
+## 2026-09-30 20:45Z update: two `wide-spread-veto` rows settled (Aug core PCE ladder)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Core PCE Aug YoY 3.2 (`a6d22ac6adc0`) | 0.50 / 0.60 | No | +0.01 | No | **+5.20** |
+| Core PCE Aug YoY 3.3 (`bcdd0e1e7263`) | 0.27 / 0.125 | Yes | +0.06 | No | **-5.00** |
+
+Fills: 3.2 No at 0.49 (book 0.51/0.69), $5 / 0.49 = 10.20 shares, so
++5.20. 3.3 Yes at the 0.21 ask (book 0.04/0.21) lost the $5. Post-restart
+mechanical ledger (`core/counterfactual.py ledger --skip-reason
+wide-spread-veto`): 2 rows / 2 trades / 1W-1L / +$0.20 / dBrier -0.0264
+(one event). Pre-restart hand total re-summed: 24 rows / 22 trades /
+12W-10L / -$24.84 (was 22/20/11W-9L/-$25.04; -25.04 + 5.20 - 5.00 =
+-24.84). Side split: no 14/12/6W-6L/-$14.59 (adds a6d2); yes
+10/10/6W-4L/-$10.25 (adds bcdd). Check: -14.59 + -10.25 = -24.84.
+Sub-class: countable-metric (self-modelled revision, one print). Ruling:
+no boundary change. Both vetoes sat on thin books, and the revision-day
+note above explains the miss better than the spread does. Full grading in
+RETRO-20260930-2045.

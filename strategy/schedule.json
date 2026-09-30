@@ -13,9 +13,7 @@
     },
     {
       "id": "xiaomi-best-chinese-ai-sep30",
-      "added": "2026-09-28T10:1xZ",
-      "trigger": "settlement of forecast 70c31f2b465e (market 3008047, snapshot 12:00 ET Sep 30)",
-      "what": "Contradiction RESOLVED 2026-09-28 11:0xZ: the resolver reads arena.ai/leaderboard/text/overall-no-style-control (style control OFF); the 10:1xZ fetches read the default style-controlled view. On the no-style-control view Xiaomi mimo-v2.6-pro is #9 at 1491 and leads qwen3.8-max #17 (1480). Forecast 70c31f2b465e: own 0.93, market-agrees. At settlement, grade three things: (1) the view-mismatch lesson (always fetch the exact resolver URL); (2) R1 blind 0.30 against R1-aware 0.90 and GPT-4.1-aware 0.92 on identical inputs (the blind search was misled by benchlm's different 'Kimi K3 leads' ranking); (3) whether a new Chinese release moved the snapshot. 2026-09-30 01:3xZ: sibling 7908401ad956 (Xiaomi THIRD-best lab overall, market 3093706, own 0.91 market-agrees, same resolver view, same 16:00Z snapshot) added. Resolver view read ~01:30Z: Google 1494 / Xiaomi 1491+-9 / Meta 1490+-7, board dated Sep25; only a Text Arena update before 16Z can flip it. Grade both rows together, plus the mech view-mismatch: all three tools read the style-controlled ?rankBy=labs page (Xiaomi #6) and R1 returned 0.10/0.05."
+      "archived": "ARCHIVED 2026-09-30 20:4xZ: 70c31f2b465e and 7908401ad956 both settled Yes, graded in RETRO-20260930-2045."
     },
     {
       "id": "treasury-sep-touch-ladder",
