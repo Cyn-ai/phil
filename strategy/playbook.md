@@ -1530,6 +1530,20 @@ Prefer, in order:
      found" as benchmark-unreachable by default for GAAP-threshold beat
      markets, the same as a basis mismatch — don't fall back to the
      non-GAAP consensus as a stand-in.
+   - **Guide arithmetic is not a No-side edge against a priced beat
+     (RETRO-20261001-1500, n=2).** ACN `b2420d891dde`: I derived an implied
+     Q4 GAAP range of 3.11-3.23 from the FY guide less 9M actuals, put the
+     3.21 threshold "near the top of the guide", and recorded 0.76 vs a
+     0.875 mid. The actual figure was 3.29, above the top of the implied
+     range, with revenue above the high end of the guided range. That makes
+     two earnings-beat No-side reads against a ≥0.80 book (HD 0.68 vs 0.81,
+     and now ACN), and both lost. Large caps guide so that they can beat, so
+     an implied-guide midpoint below the threshold measures the guide, not
+     the print. When the only argument for No is "the threshold sits high
+     in the company's own guide range", shade toward the beat base rate
+     (75-85%) and the book, and do not record a No lean larger than ~0.05
+     below the mid without a dated negative datapoint (pre-announcement,
+     peer miss, or a named charge).
    - **"Consensus clears the threshold" is not an edge when PM already
      prices it ≥~0.80** (CRCL 0.845, OXY 0.91): the market has the same
      consensus. The tradeable shapes are (i) PM price *contradicting* the
@@ -7113,3 +7127,23 @@ instrument either appears on whitehouse.gov or not). Ruling: no boundary
 change. The veto cost a small win on a 0.27-wide book with $26 liquidity.
 That is the kind of book max_spread exists for. Full grading in
 RETRO-20261001-1235.
+
+## 2026-10-01 15:00Z update: one `outside-view-veto` row settled (ACN Q4 GAAP EPS beat)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Accenture beats 3.21 GAAP (`b2420d891dde`, outside-view) | 0.76 / 0.875 | No | +0.11 | Yes | **-5.00** |
+
+Fill: No at 0.13 (1 - 0.87 bid). The print was 3.29 > 3.21, so the $5 is
+lost. Post-restart mechanical ledger (`core/counterfactual.py ledger
+--skip-reason outside-view-veto`): 4 rows / 4 trades / 3W-1L / +$5.63 /
+dBrier -0.0733, side no 2/2/1W-1L/-$4.05. Pre-restart hand total
+re-summed: 179 rows / 171 trades / 74W-97L / +$83.04 (was
+178/170/74W-96L/+$88.04; 88.04 - 5.00 = 83.04). Side split: no
+125/117/54W-63L/+$34.16 (adds b242); yes 54/54/20W-34L/+$48.88
+(unchanged). Check: 34.16 + 48.88 = 83.04. Sub-class: countable-metric
+(earnings-beat, self-modelled implied guide range). Ruling: no boundary
+change. The veto was RIGHT: it blocked a No trade on an +0.11 claimed edge
+that lost. This is the second earnings-beat No-side loss after HD
+65aea7cd91f4, which is why the earnings section now carries the
+guide-arithmetic note. Full grading in RETRO-20261001-1500.
