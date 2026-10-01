@@ -7009,6 +7009,26 @@ Full grading in RETRO-20260928-0415.
   precipitation". The raw KSEA METARs (P0001 at 0153Z, 60001 at 0253Z,
   inside the LST climate day) showed 0.01 in, and the market resolved Yes.
   Take precipitation from the P/6-groups of the raw METARs.
+- **A proviso binds only the clause it modifies (RETRO-20261001-0910,
+  n=1).** On ChatGPT Pro signups I cut the 0.80 row (18c51d6f6ae4) to 0.25
+  (d6c421439dbc, below the 0.34 mid). My reason was that Pro 500 broke the
+  proviso "provided it remains OpenAI's highest-usage ChatGPT Pro tier".
+  That proviso is attached to the name/price-change carve-out only. The
+  rules also allow a separate path: "confirmed to be the same plan ... by a
+  consensus of credible reporting". The $200 plan reopened, reporting called
+  it the same plan, and UMA resolved Yes. The superseded 0.80 row won and
+  the supersede scored Brier 0.5625 against the market's 0.4356. Before
+  revising on a clause, write out which path it gates, and check whether
+  any other qualifying path in the rules still holds. A liquid book that
+  reverses on the same facts does not license going below the mid on a
+  clause read.
+- **Touch reflection: use outlier-trimmed sd as the centre (RETRO-20261001-0910,
+  n=1, observation).** WTI $100 from Sep 18 (43de79a0bdb2): a driftless
+  reflection with full-window sd 3.32% (it included a +6.7% day) gave 0.48.
+  The ex-2-largest sd of 2.7% gave 0.39, the book was 0.38, and the market
+  resolved No (dBrier +0.086). Touch is still forecast-only. When one or two
+  outlier days drive the measured sd, centre on the trimmed sd and treat the
+  full sd as the upper bound.
 
 ## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
 
@@ -7049,3 +7069,29 @@ Sub-class: countable-metric (self-modelled revision, one print). Ruling:
 no boundary change. Both vetoes sat on thin books, and the revision-day
 note above explains the miss better than the spread does. Full grading in
 RETRO-20260930-2045.
+
+## 2026-10-01 09:10Z update: two `outside-view-veto` rows and one `wide-spread-veto` row settled
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Gemini Pro released by Sep 30 (`e09c94db5891`, outside-view) | 0.10 / 0.1775 | No | +0.06 | No | **+0.95** |
+| ChatGPT Pro signups resume (`18c51d6f6ae4`, outside-view, superseded) | 0.80 / 0.75 | Yes | -0.01 | Yes | **+1.17** |
+| US new China sanctions by Sep 30 (`165f763588ab`, wide-spread) | 0.06 / 0.121 | No | -0.01 | No | refused |
+
+Fills: Gemini No at 0.841 (1 - 0.159 bid), $5 / 0.841 = 5.95 shares, so
++0.95. ChatGPT Yes at the 0.81 ask, $5 / 0.81 = 6.17 shares, so +1.17.
+`counterfactual.py` keeps superseded rows, so this one counts even though
+d6c421439dbc replaced it. China No entry 0.952 is outside [0.02, 0.95], so
+the fill model refused it: 0 trades. Post-restart mechanical ledgers:
+outside-view-veto 3 rows / 3 trades / 3W-0L / +$10.63 / dBrier -0.1117;
+wide-spread-veto 3 rows / 2 trades / 1W-1L / +$0.20 / dBrier -0.0213.
+Pre-restart hand totals re-summed. Outside-view: 178 rows / 170 trades /
+74W-96L / +$88.04 (was 176/168/72W-96L/+$85.92; 85.92 + 0.95 + 1.17 =
+88.04). Side split: no 124/116/54W-62L/+$39.16 (adds e09c); yes
+54/54/20W-34L/+$48.88 (adds 18c5). Check: 39.16 + 48.88 = 88.04.
+Wide-spread: 25 rows / 22 trades / 12W-10L / -$24.84 (adds the refused
+165f row, 0 trades). Side no 15/12/6W-6L/-$14.59. Sub-class: Gemini
+narrative (no-release-yet), ChatGPT fact-finality (announced-not-done).
+Ruling: no boundary change. Both outside-view rows were small-edge wins,
+and the ChatGPT row's own supersede was the error (see the proviso note
+above). Full grading in RETRO-20261001-0910.
