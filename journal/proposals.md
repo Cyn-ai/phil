@@ -3660,3 +3660,20 @@ bounded on-chain wait that returns `pending_request_ids` on expiry, like
 the off-chain path does. Its default `timeout` is 300s, but the call blocked
 17x longer. (2) Operator: consider a per-server MCP timeout for
 pearl-connect, so that a hung mech can never outlive the lease.
+
+## 2026-10-01 10:3xZ — operator runner has no odds API key (and pearl-connect MCP timed out twice today)
+
+**Symptom:** `python3 core/odds.py sports` on the operator runner returns
+"no ODDS_API_KEY in env and no ~/.config/phil/odds-api-key". Earlier
+operator-runner cycle lines logged "Odds credits 0" without saying why;
+the real cause is that the key is missing, not that the budget went unused.
+This cycle's screener ranked Azerbaijan v Liechtenstein (book 0.87/0.89)
+and two BTTS rows near the top, and all of them were dropped as
+benchmark-unreachable. The book-devig and sports lanes are therefore dark
+on every operator FULL. Separately, pearl-connect failed with
+CONNECT_TIMEOUT at 09:10Z and again at 10:07Z, so step 5a has been skipped
+on both FULLs today.
+**Ask:** (1) provision the odds key on the operator machine, either as
+`ODDS_API_KEY` in loop.sh's env or as `~/.config/phil/odds-api-key`. The
+monthly cap is shared through `journal/odds-quota.json`. (2) Check why
+pearl-connect is timing out at session start.
