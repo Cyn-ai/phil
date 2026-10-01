@@ -7095,3 +7095,21 @@ narrative (no-release-yet), ChatGPT fact-finality (announced-not-done).
 Ruling: no boundary change. Both outside-view rows were small-edge wins,
 and the ChatGPT row's own supersede was the error (see the proviso note
 above). Full grading in RETRO-20261001-0910.
+
+## 2026-10-01 12:35Z update: one `wide-spread-veto` row settled (Iran sanctions EO by Sep 30)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Trump Iran sanctions EO by Sep 30 (`d3d0e27f7817`, wide-spread) | 0.03 / 0.215 | No | +0.05 | No | **+0.43** |
+
+Fill: No at 0.92 (1 - 0.08 bid), $5 / 0.92 = 5.43 shares, so +0.43.
+Post-restart mechanical ledger (`core/counterfactual.py ledger
+--skip-reason wide-spread-veto`): 4 rows / 3 trades / 2W-1L / +$0.64 /
+dBrier -0.0273. Pre-restart hand total re-summed: 26 rows / 23 trades /
+13W-10L / -$24.41 (was 25/22/12W-10L/-$24.84; -24.84 + 0.43 = -24.41).
+Side split: no 16/13/7W-6L/-$14.16 (adds d3d0); yes 10/10/6W-4L/-$10.25.
+Check: -14.16 + -10.25 = -24.41. Sub-class: fact-finality (a presidential
+instrument either appears on whitehouse.gov or not). Ruling: no boundary
+change. The veto cost a small win on a 0.27-wide book with $26 liquidity.
+That is the kind of book max_spread exists for. Full grading in
+RETRO-20261001-1235.
