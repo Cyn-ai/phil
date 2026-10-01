@@ -3044,6 +3044,15 @@ measured print (SPY LOW $760 `23a99c8fe4e8`, ES overnight + RTH-only
 window, 0.118 -> 0.08) helped by 0.0075. equity-touch now n=2, dBrier
 +0.163: forecast-only, no bets.
 
+**2026-10-01 21:35Z (RETRO-20261001-2135): one catalyst gap, one decision.**
+Rows seeded from the same premarket catalyst print (close, week-close and
+touch rows on the same ticker) count as ONE decision in family tallies, and
+the note names the shared seed. Evidence: GOOGL 351.55 premarket (Gemini 4
+Argon) seeded 20277e8808a3, f8c4029cd3a4, cae30f21783a and f94e5000e083.
+The session opened 350.79, then reversed to close 338.24. The first row
+settled No at dBrier 0.000 (own = mid 0.60), and the other three moved
+against their reads together.
+
 **2026-09-21 20:44Z update (RETRO-20260921-2044; far-barrier split added):**
 `8d1eb46b7c32` (ETH reach $2,800, own 0.25 vs mid 0.155) settled WON, dBrier
 -0.1515. Listed, NOT counted: its note sweeps sigma 50-90%, no measured
