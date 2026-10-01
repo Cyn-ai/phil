@@ -3645,3 +3645,18 @@ Service 21 took 6 sequential sends across two markets with no rejection,
 so the fault is per mech, not per safe. Today's tally is 7 rejections in 24
 sends, all on services 44/25 and never on the first send to a mech in a
 cycle. Ask unchanged.
+
+**Update 2026-09-30 22:4xZ (FULL, operator runner): an on-chain fallback
+hung the cycle for 87 minutes.** Same nonce 401 pattern (still svc44 and
+svc25 only, never svc21): svc25 rejected phil-20260930-2050-iran-r1blind,
+the 2nd send of the cycle, about 20s after the first was accepted. The
+`legacy_on_chain=true` fallback (phil-20260930-2050-iran-r1blind-oc) then
+sent no response or progress for 5244s, and the Claude Code client aborted
+the call. No `pending_request_ids` came back, so I cannot poll it and do
+not know whether it paid. I did not re-send it. The runner lease (50 min
+TTL) expired during the hang, and I re-acquired it at 22:36Z after checking
+that origin had no new cycle. Asks: (1) Pearl Connect: give mech_request a
+bounded on-chain wait that returns `pending_request_ids` on expiry, like
+the off-chain path does. Its default `timeout` is 300s, but the call blocked
+17x longer. (2) Operator: consider a per-server MCP timeout for
+pearl-connect, so that a hung mech can never outlive the lease.
