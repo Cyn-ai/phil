@@ -1544,6 +1544,16 @@ Prefer, in order:
      (75-85%) and the book, and do not record a No lean larger than ~0.05
      below the mid without a dated negative datapoint (pre-announcement,
      peer miss, or a named charge).
+     **n=3 (RETRO-20261002-0045, NKE `a515f0e0f6ec`):** threshold GAAP
+     0.45 sat 0.01 ABOVE a 0.44 consensus that had been revised down 1.6%,
+     and I recorded 0.82 vs a 0.865 mid. The print was 0.48. The lean
+     stayed inside the 0.05 cap, so the cost was small (dBrier +0.014). But
+     the same direction lost a third time out of three. Nike's last two
+     beats were +0.07 and +0.09, so a threshold one cent over consensus is
+     well inside one typical beat margin. Rule: when the threshold minus
+     consensus is smaller than the median of the company's last 4 beat
+     margins, "threshold above consensus" is not a No argument. Record at
+     or above the mid unless there is a dated negative datapoint.
    - **"Consensus clears the threshold" is not an edge when PM already
      prices it ≥~0.80** (CRCL 0.845, OXY 0.91): the market has the same
      consensus. The tradeable shapes are (i) PM price *contradicting* the
