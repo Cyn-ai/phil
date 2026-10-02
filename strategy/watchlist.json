@@ -57,7 +57,8 @@
     "Amended 2026-09-21 02:3xZ (TRIGGERED cycle, cloud): raised the core PCE (3938031) move_threshold 0.05 -> 0.10. Three fires on this exact key in three days (Sep18 15:22Z +0.070, Sep20 12:52Z -0.050, Sep21 02:37Z -0.065), each individually researched (WebSearch/WebFetch) and each confirmed no dated news catalyst -- the observed CLOB spread on this token has run 0.01-0.10 across the same window, i.e. within spread-noise range of the 0.05 threshold on a thin ($660 liquidity) book. 0.10 still catches a real consensus-forming move (a genuine settle-on-3.3 signal implies a much larger repricing toward the extremes) while filtering the bid/ask wobble this item has fired on three times running for zero bets.",
     "Amended 2026-09-24 07:4xZ (TRIGGERED cycle, cloud): pruned the SNB Sep24 calendar entry and its paired price_move (market 4443883) -- the decision is out (SNB's own press release, pre_20260924: policy rate held at 0%, matching the no-change Yes side exactly). No-side edge already exhausted pre-print (CLOB bid 0.999, no ask); nothing left to watch for on this market.",
     "Amended 2026-09-30 08:4xZ (FULL cycle, operator machine): pruned five expired price_moves (MV CDU, United Russia every region, Xi visit, Russia turnout, Berlin Linke -- all past expires, pre-restart positions) and the expired UMich Sep final calendar entry. Core PCE 3.3 label refreshed: the ledger restarted 2026-09-28 so 8894592b953a is no longer an open position; it now watches forecast bcdd0e1e7263. Added the Milei UMA-dispute price move and an ACN Q4 FY26 release calendar entry.",
-    "Amended 2026-09-30 14:1xZ (FULL cycle, operator machine): pruned the core PCE 3.3 price move (expired 12:00Z) and the BEA Aug PCE calendar entry (window over; BEA printed core YoY 3.0 / MoM 0.2, ladder settled in-book at <=3.0 0.9995). Milei label refreshed (UMA now disputed, own 0.70). Added the ChatGPT Pro signups price move (clause-proviso watch, resolves tonight)."
+    "Amended 2026-09-30 14:1xZ (FULL cycle, operator machine): pruned the core PCE 3.3 price move (expired 12:00Z) and the BEA Aug PCE calendar entry (window over; BEA printed core YoY 3.0 / MoM 0.2, ladder settled in-book at <=3.0 0.9995). Milei label refreshed (UMA now disputed, own 0.70). Added the ChatGPT Pro signups price move (clause-proviso watch, resolves tonight).",
+    "Amended 2026-10-02 12:0xZ (FULL cycle, operator machine): pruned the expired ChatGPT Pro signups price move (expired Oct 1 04:00Z) and the ACN Q4 calendar entry (window over; ACN graded in RETRO-20261001-1500). Added the BLS Sep Employment Situation calendar entry (12:31Z) so the NFP/UR print gets a TRIGGERED cycle; this FULL cycle ended ~40 min before the release."
   ],
   "price_moves": [
     {
@@ -67,14 +68,6 @@
       "move_threshold": 0.1,
       "window_min": 60,
       "expires": "2026-10-04T00:00:00Z"
-    },
-    {
-      "market_id": "4544947",
-      "token_id": "94484963615265052047694135695573341971850918597242097959866803760911220142907",
-      "label": "Will OpenAI resume US ChatGPT Pro signups by September 30, 2026? (forecast d6c421439dbc own 0.25; Pro $200 reopens Sep 30 at 10x while new Pro 500 is the highest-usage tier - clause proviso 'provided it remains the highest-usage Pro tier'; a large move means a Polymarket clarification or confirmation that the reopened plan counts)",
-      "move_threshold": 0.15,
-      "window_min": 60,
-      "expires": "2026-10-01T04:00:00Z"
     }
   ],
   "new_market": {
@@ -84,9 +77,9 @@
   },
   "calendar": [
     {
-      "label": "Accenture Q4 FY26 earnings release (before 8:00 ET call) - market 4892630 GAAP EPS > 3.21, forecast b2420d891dde own 0.76 vs 0.875 (outside-view-veto) -- grade the guidance-implied range read (3.11-3.23) vs the beat-rate prior; check for any new business-optimization charge",
-      "fire_at": "2026-10-01T10:45:00Z",
-      "window_min": 45
+      "label": "BLS September Employment Situation (8:30 ET) - NFP bracket event 'How many jobs added in September?' (4217184-4217190; open forecasts 61b3b63b0352 100-150k own 0.24, 9cc024286dae 50-100k 0.25, 6ee7438d494b 0-50k 0.18, f3c0e655e693 lose 0-50k 0.08, dacdc8ca1779 200+ 0.05) and 'September Unemployment Rate' (4217153-4217161; 9bcef3faf66f 4.0% own 0.24). Pre-print books 11:47Z: NFP 50-100k 0.40 / 100-150k 0.415 / 0-50k 0.135; UR 4.0 0.175 / 4.1 0.44 / 4.2 0.30. Fetch the primary BLS release (bls.gov/news.release/empsit.nr0.htm); fact-final only once the print is on bls.gov, and per the immediate-post-release-book trap do not cite early CLOB moves as confirmation. Check each leg's ask against the printed bracket.",
+      "fire_at": "2026-10-02T12:31:00Z",
+      "window_min": 30
     }
   ]
 }
