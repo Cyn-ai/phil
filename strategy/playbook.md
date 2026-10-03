@@ -3063,6 +3063,33 @@ The session opened 350.79, then reversed to close 338.24. The first row
 settled No at dBrier 0.000 (own = mid 0.60), and the other three moved
 against their reads together.
 
+**2026-10-03 03:50Z (RETRO-20261003-0350): equity-touch/close week of
+Sep 28, four ticker-weeks, all No.** 12 rows across GOOGL, MU, MSFT and
+AAPL (6 decisions by the one-seed rule). Own sat below the mid on every
+row and was closer on all 12 (dBrier sum -1.47). Two caveats keep this
+from being evidence of skill. First, every outcome was No, so a
+systematically low reader wins every row. Second, the three largest
+margins are stale or placeholder books (AAPL 0.031/0.99, MU 0.50/0.97,
+GOOGL 355 no bid). MU missed 1110 by 0.18% (week high 1,108.00).
+**Pre-registered re-grade (equity touch/close):** at 8 or more
+independent ticker-weeks, counting only rows whose recorded book spread
+was <= max_spread, own must beat the mid on decision-weighted Brier
+AND on at least 2 decisions that resolved Yes. Until then it stays
+forecast-only. Tally at this commit (max_spread 0.06): 2 qualifying
+decisions, GOOGL Oct 2 seed (3ee7b5279259, 0.025/0.075) and MSFT Oct 2
+seed (28e1f7ecefc5, 0.24/0.30), both own-closer, 0 Yes outcomes. Every
+other row this week sat on a wider book.
+
+**Metals listed (same retro):** gold week of Sep 28 at GVZ 24.37 implied
+(Sep 29, dated). Reach decision (4200 Yes + 4250 No): on the liquid 4200
+rung the market was closer (+0.029); the 4250 gain was against a
+placeholder book. Dip decision (4100, No): own closer, but on a
+0.08/0.65 book. Silver reach 63 (No): own closer by 0.014 on stale
+VXSLV (Sep 11). **Recount flag:** the measured-row tally above was last
+summed 2026-09-25 (11 rows, 9 decisions, own closer 4 of 9). The WTI Sep
+ladder (OVX, one decision) and these three were never folded in. The
+next deep retro recounts from forecasts.jsonl before any re-grade.
+
 **2026-09-21 20:44Z update (RETRO-20260921-2044; far-barrier split added):**
 `8d1eb46b7c32` (ETH reach $2,800, own 0.25 vs mid 0.155) settled WON, dBrier
 -0.1515. Listed, NOT counted: its note sweeps sigma 50-90%, no measured
@@ -4934,6 +4961,20 @@ input. Flagging only: don't read the NFP win as validating wide sds, and
 don't read the UR loss as validating tight ones, until more of this exact
 shape (sourced-sd self-model, standard floor, headline econ print)
 settles.
+
+**Sep 2026 print + ADP rule (RETRO-20261003-0350).** NFP +29k vs quoted
+consensus 84-91k; UR 4.175% unrounded (4.2). The consensus-centred
+N(92k, 75k), sd UNSOURCED, beat PM and Kalshi on every bracket (5 rows,
+dBrier sum -0.248). Both venues had leaned higher on the ADP +90k beat.
+Gate 2 still blocked it correctly by its own terms, and one event does not
+loosen gate 2. **Rule:** ADP and jobless claims do not move the recorded
+NFP or UR centre. Write them as "shade view: X" in the note. Evidence: the
+ADP read was wrong-direction on 2 of 2 events. In Aug, ADP pulled my mean
+down before a large beat. In Sep, ADP pulled the venues' NFP up and my UR
+centre down (4.12 -> 4.09) before a miss and a UR rise. Unshaded, the UR
+4.0 row would have been ~0.20, not 0.24. This narrows the measured-print
+shade exception in DEEP-2026-09-26 for this one input pair, because ADP
+has no validated mapping to the BLS print.
 
 **Pre-registered kill switch:** after 4 settled carve-out EVENTS or 6
 settled carve-out BETS (whichever comes first), if net realizable P&L
@@ -7061,7 +7102,11 @@ Full grading in RETRO-20260928-0415.
   The ex-2-largest sd of 2.7% gave 0.39, the book was 0.38, and the market
   resolved No (dBrier +0.086). Touch is still forecast-only. When one or two
   outlier days drive the measured sd, centre on the trimmed sd and treat the
-  full sd as the upper bound.
+  full sd as the upper bound. **Update RETRO-20261003-0350:** trimmed beat
+  full on 3 more tickers (MU, GOOGL, MSFT; 8 rows), but all resolved No
+  and trimmed is always the lower number, so the test is one-sided by
+  construction (MU 1110 missed by 0.18%). Still an observation. It stays
+  that way until a trimmed-centred row resolves Yes.
 
 ## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
 
@@ -7166,3 +7211,29 @@ change. The veto was RIGHT: it blocked a No trade on an +0.11 claimed edge
 that lost. This is the second earnings-beat No-side loss after HD
 65aea7cd91f4, which is why the earnings section now carries the
 guide-arithmetic note. Full grading in RETRO-20261001-1500.
+
+## 2026-10-03 03:50Z update: three `outside-view-veto` rows and one `wide-spread-veto` row settled (Sep NFP, Zelenskyy weekly)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| NFP Sep 100-150k (`61b3b63b0352`, outside-view) | 0.24 / 0.40 | No | +0.14 | No | **+3.06** |
+| Zelenskyy 80-99 wk (`8599afea54c0`, outside-view) | 0.98 / 0.85 | Yes | +0.11 | Yes | **+0.75** |
+| Zelenskyy 100-119 wk (`529c6b3ea69d`, outside-view) | 0.02 / 0.1365 | No | +0.113 | No | **+0.77** |
+| NFP Sep 0-50k (`6ee7438d494b`, wide-spread) | 0.18 / 0.125 | Yes | -0.02 | Yes | **+20.00** |
+
+Fills: 61b3 No at 0.62 (1 - 0.38 bid), 8599 Yes at the 0.87 ask, 529c No
+at 0.867, 6ee7 Yes at the 0.20 ask (25 shares). Post-restart mechanical
+ledgers: outside-view-veto 7 rows / 7 trades / 6W-1L / +$10.21 / dBrier
+-0.0623 (was 4/4/3W-1L/+$5.63); wide-spread-veto 5 rows / 4 trades /
+3W-1L / +$20.64 / dBrier -0.0405 (was 4/3/2W-1L/+$0.64). Pre-restart hand
+totals re-summed. Outside-view: 182 rows / 174 trades / 77W-97L / +$87.62
+(83.04 + 3.06 + 0.75 + 0.77 = 87.62). Side split: no 127/119/56W-63L/
++$37.99 (adds 61b3, 529c); yes 55/55/21W-34L/+$49.63 (adds 8599). Check:
+37.99 + 49.63 = 87.62. Wide-spread: 27 rows / 24 trades / 14W-10L /
+-$4.41 (-24.41 + 20.00). Side split: no 16/13/7W-6L/-$14.16 (unchanged);
+yes 11/11/7W-4L/+$9.75 (adds 6ee7). Check: -14.16 + 9.75 = -4.41.
+Sub-class: NFP rows countable-metric (consensus-centred, unsourced sd);
+Zelenskyy rows countable-metric (running count + bootstrap). Ruling: no
+boundary change. The NFP veto applied gate 2 as written. The +$20 on 6ee7
+is a 5:1 payout on a row whose own est sat UNDER the ask, so it is luck,
+not lost edge. Full grading in RETRO-20261003-0350.
