@@ -5550,6 +5550,20 @@ edec04d6b96d (rolling-window count, unshaded-ish 0.85 vs 0.545, won,
 −0.185) is consistent. n is tiny; this is a recording discipline, not a
 betting change — the category bar stands.
 
+**Amendment (RETRO-20261003-2226): reach n>=20 aligned by pooling start
+hours ±2h before falling back to all windows.** Musk Oct 1-3
+`59846943b74b` recorded the all-windows read (n=149, 12h mean 16.2) on
+90-114 at 0.13 vs mid 0.078. The remaining window was 04-16Z, and the
+period closed at ~71 (9 posts in those 12h), inside 65-89. Re-run on the
+same series: aligned@04Z n=6 mean 9.3. Pooling start hours 02-06Z gives
+n=30 windows with max 24, so P(90-114) = 0.00, and dBrier would have been
+-0.006 instead of +0.0108. Time of day is a measured property of the
+resolver series, not a shade. `xwindow.py --aligned <series_start_hour>
+<window_start_hour>` prints it; run it for start hours w-2..w+2 and pool
+the windows. Record the pooled aligned read when pooled n>=20, else the
+all-windows read, and put both in the note. Grade this at the next 2
+settled xwindow rows.
+
 **2026-09-25 20:15Z retro (RETRO-20260925-2015): same discipline for
 resolver-series band families.** Democratic Senate odds (PMO hourly
 print) Sep 25 bands: the driftless normal on the resolver series

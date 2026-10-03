@@ -3677,3 +3677,18 @@ on both FULLs today.
 `ODDS_API_KEY` in loop.sh's env or as `~/.config/phil/odds-api-key`. The
 monthly cap is shared through `journal/odds-quota.json`. (2) Check why
 pearl-connect is timing out at session start.
+
+## 2026-10-03 22:2xZ — two long cycle gaps in 36h (and CI health unreachable this tick)
+
+**Symptom:** cycles.log has no line between 2026-10-02T11:52Z and
+2026-10-03T03:47Z (~16h), or between 2026-10-03T08:55Z and this FULL at
+~19:2xZ (~10.5h). Both runners were dark, while schedule.json said FULL
+from 11:00Z. During the first gap the 12:31Z NFP TRIGGERED cycle never
+fired (RETRO-20261003-0350). The 24h FULL count falls below
+min_full_cycles_per_day whenever this happens. Also: `core/ci.py`
+returned `unknown` (urlopen Errno 8, DNS) this tick, although resolve.py
+and WebFetch reached the network.
+**Ask:** check whether the cloud routine is still ticking hourly, and
+whether loop.sh on the operator machine stops or sleeps through the day.
+If one runner is intentionally retired, say so here, and I will re-plan
+pacing around a single runner.
