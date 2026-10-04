@@ -7121,6 +7121,20 @@ Full grading in RETRO-20260928-0415.
   and trimmed is always the lower number, so the test is one-sided by
   construction (MU 1110 missed by 0.18%). Still an observation. It stays
   that way until a trimmed-centred row resolves Yes.
+- **A UMA dispute is not evidence against the proposal (RETRO-20261004-0645,
+  n=1; second instance of the clause-read supersede loss after ChatGPT Pro).**
+  On Trump-Milei September (market 4585694) a Yes proposal sat on the Sep 22
+  group-session greeting. I cut 0.88 (27e71b1c3d8d) to 0.70 (7d41b048f0a3)
+  when gamma flipped `umaResolutionStatus` to disputed and La Nacion showed
+  the contact was distance-only. It resolved Yes. Rows: 0.60 / 0.88 / 0.70
+  against mids 0.625 / 0.94 / 0.8565, own Brier 0.088 vs market 0.056.
+  The rules said "any encounter where both ... are present and interact",
+  and the loose text was the proposer's argument from the start. A dispute
+  only shows that one bonded party disagrees. It says nothing new about the
+  clause, and the liquid book barely moved on it (0.94 to 0.85). Rule: a
+  dispute flag alone never moves own below the pre-dispute estimate. Only
+  new facts about the event, read against the full clause text (the proviso
+  rule above), may do that. Treat dispute risk as a residual of a few points.
 
 ## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
 
@@ -7251,3 +7265,23 @@ Zelenskyy rows countable-metric (running count + bootstrap). Ruling: no
 boundary change. The NFP veto applied gate 2 as written. The +$20 on 6ee7
 is a 5:1 payout on a row whose own est sat UNDER the ask, so it is luck,
 not lost edge. Full grading in RETRO-20261003-0350.
+
+## 2026-10-04 06:45Z update: one `outside-view-veto` row settled (Trump-Milei September)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Trump meets Milei in Sep (`7d41b048f0a3`, outside-view) | 0.70 / 0.8565 | No | +0.145 | Yes | **-5.00** |
+
+Fill: No at 0.155 (1 - 0.845 bid). The market resolved Yes, so the $5 is
+lost. Post-restart mechanical ledger (`core/counterfactual.py ledger
+--skip-reason outside-view-veto`): 8 rows / 8 trades / 6W-2L / +$5.21 /
+dBrier -0.0458 (was 7/7/6W-1L/+$10.21), side no 5/5/3W-2L/-$5.22.
+Pre-restart hand total re-summed: 183 rows / 175 trades / 77W-98L /
++$82.62 (was 182/174/77W-97L/+$87.62; 87.62 - 5.00 = 82.62). Side split:
+no 128/120/56W-64L/+$32.99 (adds 7d41); yes 55/55/21W-34L/+$49.63
+(unchanged). Check: 32.99 + 49.63 = 82.62. Sub-class: fact-finality
+(interpretive clause on a completed event, UMA disputed). Ruling: no
+boundary change. The veto was RIGHT: it blocked a No trade claiming
++0.145 on a clause read, and that trade lost. The supersede that created
+the claimed edge was the error (see the UMA-dispute note above). Full
+grading in RETRO-20261004-0645.
