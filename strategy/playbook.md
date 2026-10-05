@@ -7172,6 +7172,12 @@ Full grading in RETRO-20260928-0415.
   place: Cury beat Santos. The face-to-face houses (Datafolha 4, Ideia 6.7)
   had that right, and the Atlas/Palver weighting I leaned on had it wrong
   (own 0.55 still beat the 0.595 mid). n=1, observation only.
+  Minor-candidate squeeze (RETRO-20261005-1445): in a polarized two-way
+  first round, centre each minor candidate at about 0.70-0.75x their eve
+  valid-vote poll share. Evidence: Santos Datafolha 3 -> 2.2, Cury 4 -> 2.9
+  (2026); Ciro ~5.5 -> 3.0 (2022). Centring only, not a bet licence. File
+  every election row under category `election`, never `elections`. The one
+  `elections` row (151647508871) split the bucket.
 
 ## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
 
