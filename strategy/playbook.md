@@ -46,6 +46,19 @@ Rank every candidate by WHY the market should be wrong, strongest first:
    something beyond the headline (revision risk, resolver read), not the
    crowd being slow; the NG win (`2dc417ed68f6`) was the opposite shape,
    an already-final official settlement print.
+   **The corollary moves the ESTIMATE, not just the bet (RETRO-20261005-2205).**
+   Forgotten Island wk2 7-8m (`e20cbdec6d68`): the weekend had already
+   played, the book sat at 0.96 above every public figure, and I wrote
+   "likely Saturday actuals I could not see" and still nudged only
+   0.25-0.30 -> 0.35. Resolved Yes, dBrier +0.42, the worst single
+   forecast row so far. Rule for any past-event bracket (the measured
+   thing has already happened and only the published number is pending)
+   where a liquid book sits beyond every public figure: put at least half
+   the weight on the book (est >= 0.5*own + 0.5*mid). Book >= 0.90 or
+   <= 0.10 means 0.7 on the book. Applies to forecasts and bets alike.
+   Tally of this shape: 1 row, book right 1/1. `bf9989621bdf` (Lula 44-47
+   mid-count, own 0.70 vs 0.87) is the next row to add when it settles.
+   Below 3 rows this rule is provisional; the deep retro grades it.
    **Bracket-sibling verification / immediate-post-release-book trap
    (2026-09-11, RETRO-20260911-1244):** for a bracket-set market (CPI/PPI/
    GDP style, multiple binary legs on one release), once
@@ -7348,3 +7361,22 @@ boundary change. The veto was RIGHT: it blocked a No trade claiming +0.17
 that lost by 8 points of vote share. The estimate was built on stale Sep
 1-3 Datafolha numbers and unfetched snippets, and the Oct 3 supersede
 (0.85) already corrected most of it. Full grading in RETRO-20261005-1100.
+
+## 2026-10-05 22:05Z update: one `outside-view-veto` row settled (Forgotten Island wk2 7-8m)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Forgotten Island wk2 7-8m (`e20cbdec6d68`, outside-view) | 0.35 / 0.9585 | No | +0.591 | Yes | **-5.00** |
+
+Fill: No at 0.059 (1 - 0.941 bid). The bracket resolved Yes, so the $5
+is lost. Post-restart mechanical ledger (`core/counterfactual.py ledger
+--skip-reason outside-view-veto`): 10 rows / 10 trades / 6W-4L / -$4.79
+/ dBrier +0.0122 (was 9/9/6W-3L/+$0.21), side no 7/7/3W-4L/-$15.22.
+Pre-restart hand total re-summed: 185 rows / 177 trades / 77W-100L /
++$72.62 (was 184/176/77W-99L/+$77.62; 77.62 - 5.00 = 72.62). Side split:
+no 130/122/56W-66L/+$22.99 (adds e20c); yes 55/55/21W-34L/+$49.63
+(unchanged). Check: 22.99 + 49.63 = 72.62. Sub-class: fact-finality (a
+past-event bracket where the book saw data I did not). Ruling: no
+boundary change. The veto was RIGHT, but the estimate was wrong. The new
+past-event-bracket weighting rule in the fact-finality section is the
+fix. Full grading in RETRO-20261005-2205.
