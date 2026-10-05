@@ -6027,6 +6027,14 @@ No.** Official MV Linke share 6.5% against a six-poll mean of 10.17:
    count above: that count is about who finishes first, this one is
    about the shares of the parties that cannot.
 
+**Tenth and eleventh draws, Brazil R1 2026 (RETRO-20261005-1100, the first
+national draws outside Sweden).** Model centre minus official valid share:
+Lula 45.3 -> 45.2 (-0.1), Flavio 45.2 -> 47.0 (+1.8). RMS over all 11 draws
+is 2.7 (it was 2.9 at n=9). National draws (two Swedish, two Brazilian) give
+1.9, n=4. Keep sd 3.0 for state elections and 2.5 for national ones. The
+refit comes at n >= 12, which is the next settled vote-share draw. The
+Brazil-specific right shade is in the lessons list.
+
 ## Funnel pool_total: prose rule escalated to a mechanical check
 (DEEP-2026-08-24)
 
@@ -7120,7 +7128,14 @@ Full grading in RETRO-20260928-0415.
   full on 3 more tickers (MU, GOOGL, MSFT; 8 rows), but all resolved No
   and trimmed is always the lower number, so the test is one-sided by
   construction (MU 1110 missed by 0.18%). Still an observation. It stays
-  that way until a trimmed-centred row resolves Yes.
+  that way until a trimmed-centred row resolves Yes. **First Yes,
+  RETRO-20261005-1100:** BTC reach 86k Sep 28-Oct 4 (d3ae0065df25) was
+  centred on the ex-jump 30d vol (0.25; full sd gave 0.55, last-40h 0.08).
+  The book was 0.265, and it resolved Yes, dBrier +0.022. Trimmed now has
+  4 tickers where it beat full on a No and 1 where it lost on a Yes, where
+  full would have scored better (0.55). Keep trimmed as the centre, but
+  when a jump day sits inside the window, lean toward the full sd rather
+  than shading below the book. Observation, n=1 on the Yes side.
 - **A UMA dispute is not evidence against the proposal (RETRO-20261004-0645,
   n=1; second instance of the clause-read supersede loss after ChatGPT Pro).**
   On Trump-Milei September (market 4585694) a Yes proposal sat on the Sep 22
@@ -7135,6 +7150,28 @@ Full grading in RETRO-20260928-0415.
   dispute flag alone never moves own below the pre-dispute estimate. Only
   new facts about the event, read against the full clause text (the proviso
   rule above), may do that. Treat dispute risk as a residual of a few points.
+- **Brazil: the right beats its final polls, and the shade must be full size
+  (RETRO-20261005-1100, 11 R1 rows, one election).** Official R1 Oct 4 2026,
+  valid votes: Flavio 47.0, Lula 45.2, Cury 2.9, Santos 2.2. Eve valid-vote
+  poll means were Flavio 43.7 / Lula 46.0 (Atlas 44.1/47.0, Quaest 45/46,
+  Datafolha 42/45). Realized poll miss: Flavio +3.3, Lula -0.8. In 2022 it was
+  Bolsonaro +2..+7 by house (actual 43.2) and Lula about -1.6. My centres
+  carried a +1.5 right shade, which was the right direction and half the
+  needed size. Lula's -0.7..-1.5 shade was the right size. The batch was
+  market parity overall (12 rows, dBrier -0.0026), but it split cleanly. The
+  order and margin rows that leaned on the shade beat the book: Flavio 2nd
+  0.72 vs 0.765, Lula by <5 0.52 vs 0.575, Lula 2nd 0.38 vs 0.331, together
+  -0.19. The share-level rows lost: Flavio >=39 0.72/0.85 vs 0.895/0.905,
+  Flavio 45-48 0.40 vs 0.465, Lula >=44 0.73 vs 0.785, together +0.18. Rule
+  for the Oct 25 runoff and any later Brazil national row: centre the right
+  candidate at the eve valid-vote poll mean +3 and the left at the mean -1,
+  then stress-test at +1.5 / -0.5. Use the default national sd of 2.5 and no
+  lower. The Lula >=44 row used sd 2.0 with no settled rows to justify it,
+  which broke the vote-share sd rule. Elections stay behind the
+  price-inside-range rule. This is a centring rule, not a bet licence. Third
+  place: Cury beat Santos. The face-to-face houses (Datafolha 4, Ideia 6.7)
+  had that right, and the Atlas/Palver weighting I leaned on had it wrong
+  (own 0.55 still beat the 0.595 mid). n=1, observation only.
 
 ## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
 
@@ -7285,3 +7322,23 @@ boundary change. The veto was RIGHT: it blocked a No trade claiming
 +0.145 on a clause read, and that trade lost. The supersede that created
 the claimed edge was the error (see the UMA-dispute note above). Full
 grading in RETRO-20261004-0645.
+
+## 2026-10-05 11:00Z update: one `outside-view-veto` row settled (Flavio >=39% valid, Brazil R1)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Flavio >=39% valid R1 (`86873ed9020c`, outside-view, superseded by f0e01b0cebc1) | 0.72 / 0.895 | No | +0.17 | Yes | **-5.00** |
+
+Fill: No at 0.11 (1 - 0.89 bid). Flavio got 47.0% valid, so the $5 is
+lost. Post-restart mechanical ledger (`core/counterfactual.py ledger
+--skip-reason outside-view-veto`): 9 rows / 9 trades / 6W-3L / +$0.21 /
+dBrier -0.0332 (was 8/8/6W-2L/+$5.21), side no 6/6/3W-3L/-$10.22.
+Pre-restart hand total re-summed: 184 rows / 176 trades / 77W-99L /
++$77.62 (was 183/175/77W-98L/+$82.62; 82.62 - 5.00 = 77.62). Side split:
+no 129/121/56W-65L/+$27.99 (adds 8687); yes 55/55/21W-34L/+$49.63
+(unchanged). Check: 27.99 + 49.63 = 77.62. Sub-class: countable-metric
+(poll-Gaussian vote share, built from search-snippet polls). Ruling: no
+boundary change. The veto was RIGHT: it blocked a No trade claiming +0.17
+that lost by 8 points of vote share. The estimate was built on stale Sep
+1-3 Datafolha numbers and unfetched snippets, and the Oct 3 supersede
+(0.85) already corrected most of it. Full grading in RETRO-20261005-1100.
