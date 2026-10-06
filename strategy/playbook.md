@@ -7191,6 +7191,19 @@ Full grading in RETRO-20260928-0415.
   (2026); Ciro ~5.5 -> 3.0 (2022). Centring only, not a bet licence. File
   every election row under category `election`, never `elections`. The one
   `elections` row (151647508871) split the bucket.
+  State races (RETRO-20261006-0115, 2 Senate rows, both lost to the book):
+  the right slate's miss was larger at state level than nationally. SP:
+  Derrite +5.6 and Prado +5.8 over the eve valid-vote blend, with the left
+  pair -3/-4. DF: Kicis +3.4. For Senate and governor rows, centre the right
+  slate at the poll mean +4 and the left at -1. In a paired two-seat race,
+  also pull the junior candidate of the dominant slate toward the senior one
+  (DF Michelle/Kicis: 6.5 polled, 1.6 realized). In rankmc.py, use
+  `--bloc-shift R:4 --bloc-shift L:-1 --bloc-sd 2.5`. When a liquid book
+  (>=$25k) sits at the right-shift end, weight it at least 0.5. Both rows
+  (Prado own 0.50 vs 0.62, Kicis 0.62 vs 0.82, dBrier +0.22 combined) ran
+  R +0.5..+2. Re-run at the national rule, they still trailed the DF book.
+  Provisional at n=2 from one election. The next test is the Oct 25
+  second rounds.
 
 ## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
 
