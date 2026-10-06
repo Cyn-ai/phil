@@ -7150,6 +7150,16 @@ Full grading in RETRO-20260928-0415.
   not timestamped after the close, record it and give it zero weight in
   est-prob. R1-aware identical-field-vector flag: n_event=2 (RBI/Moro,
   SPY 760/765).
+- **Equities-close: the crypto ladder-sd rule does not carry over by
+  analogy (RETRO-20261006-2110, 1 event day, observation).** On Oct 6
+  NVDA >240 and MSFT >530 (closes 239.24 / 529.30), every note carried a
+  ladder-implied read and a realized-20d read, and every recorded est
+  leaned to the ladder "per the touch-family pattern". The realized read
+  was lower and closer on 4/4 decision points (15:43Z and 18:50Z, both
+  tickers). That is one correlated day against the crypto rule's 3/3 the
+  other way. Until there are 5 event days, record the MIDPOINT of the two
+  reads on equities-close, and keep the tally here: realized closer 1,
+  ladder closer 0. Forecast-only.
 - **Gov-act-by-date: a scheduled in-window venue outweighs "not signed
   yet" (RETRO-20260930-0125, n=1, observation).** On Trump renames AI
   (52e53039c9d9) I shaded to 0.40 below the 0.485 mid because nothing had
