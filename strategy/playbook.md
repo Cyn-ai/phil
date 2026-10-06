@@ -5875,6 +5875,22 @@ cleared 5%, FDP 2.6% did not. Answers to the two pre-registered questions:
    under 5% would have given AfD ~42-43 seats). Validated on structure,
    not precision. Do not raise the politics-general stake or loosen the
    category bar on this row.
+3. **Second seat-model row, first FPTP one, and the first loss to the
+   book (RETRO-20261006-0920).** Quebec PQ majority (`d0cb49021873`): I
+   recorded 0.35 (Qc125 39%, shaded down for the late PQ slip) against a
+   mid of 0.275 on a $8k book. The result was No: PQ won 59 of 127 seats
+   on 28.0% (needed 64). The Qc125 range was 50-74 around a centre of 62,
+   so 59 is inside the range, slightly below the centre. Brier: own
+   0.1225, model 0.152, mid 0.0756. The same model put the CAQ at 9 seats
+   [2-12], and the CAQ won 0. So in a five-party FPTP race the model's
+   centre was close but its interval was too narrow at the low end. The
+   family tally is now 1W-1L against the book (PR seat allocation won,
+   FPTP lost). Rule (provisional, n=2): when the electoral system is
+   multi-party first-past-the-post, a third-party seat model is
+   mechanical on its centre but NOT on its probabilities. Put at least
+   0.5 weight on a liquid book (>= $5k), the same weighting the Brazil
+   Senate rule uses. For a PR system with a known threshold, ruling 2
+   stands.
 
 **Grüne ≥7% bet (`66131e6b8f76`) settled 2026-09-07 16:14Z: Yes, WON
 +$40.05, brier_delta −0.1179 (agent beat market).** Est 0.18 vs entry
