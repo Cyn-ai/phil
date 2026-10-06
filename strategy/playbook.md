@@ -7244,6 +7244,16 @@ Full grading in RETRO-20260928-0415.
   R +0.5..+2. Re-run at the national rule, they still trailed the DF book.
   Provisional at n=2 from one election. The next test is the Oct 25
   second rounds.
+  Governor row (RETRO-20261006-1540, n=1, Paraná Moro `4108c0300213`):
+  pre-mech own was 0.83, I moved it to 0.80 on a commissioned outlier
+  (Indice Moro 35 / Sandro 32) plus an incumbent-machine story, against a
+  0.82 book. It settled Yes before the runoff. Moro was at or above 50%
+  valid in two independent houses. Own 0.04, mid 0.032, pre-mech 0.029.
+  Rules: (a) a commissioned or single-house outlier against the right-wing
+  leader never moves own below a liquid book when the independent houses
+  agree with that book; (b) when two or more independent houses have the
+  leader at or above 50% valid, give the R1-outright path real weight and
+  do not assume the row runs to the runoff.
 
 ## 2026-09-30 01:25Z update: one `outside-view-veto` row settled (10y par 5.25% touch)
 
