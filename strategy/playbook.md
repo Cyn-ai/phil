@@ -5891,6 +5891,14 @@ cleared 5%, FDP 2.6% did not. Answers to the two pre-registered questions:
    0.5 weight on a liquid book (>= $5k), the same weighting the Brazil
    Senate rule uses. For a PR system with a known threshold, ruling 2
    stands.
+   **Extension (RETRO-20261006-1230, n=3): riding-level win
+   probabilities too.** Zanetti, Jean-Lesage (`36e863d66907`): Qc125's
+   riding model had QS at 54%. I shaded it to 0.66 for the incumbent and
+   recorded that against a 0.815 mid on a $16.5k book. QS won. Brier:
+   own 0.116, model 0.212, mid 0.034. A proportional-swing riding
+   projection in a multi-party FPTP race gets at most 0.5 weight against
+   a liquid book. Apply any incumbent or candidate shade AFTER the blend,
+   never in its place. Family tally against the book is now 1W-2L.
 
 **Grüne ≥7% bet (`66131e6b8f76`) settled 2026-09-07 16:14Z: Yes, WON
 +$40.05, brier_delta −0.1179 (agent beat market).** Est 0.18 vs entry
@@ -7446,3 +7454,23 @@ transcripts). Ruling: no boundary change. The veto was RIGHT on both. The
 estimates were wrong on the same input, and the new truncated-transcript
 rule in the utterance section is the fix. Full grading in
 RETRO-20261006-0615.
+
+## 2026-10-06 12:30Z update: one `outside-view-veto` row settled (Zanetti, Jean-Lesage)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Zanetti wins Jean-Lesage (`36e863d66907`, outside-view) | 0.66 / 0.815 | No | +0.13 | Yes | **-5.00** |
+
+Fill: No at 0.21 (1 - 0.79 bid). Zanetti won, so the $5 is lost.
+Post-restart mechanical ledger (`core/counterfactual.py ledger
+--skip-reason outside-view-veto`): 13 rows / 13 trades / 6W-7L / -$19.79
+/ dBrier +0.0408 (was 12/12/6W-6L/-$14.79/+0.0375), side no
+10/10/3W-7L/-$30.22. Pre-restart hand total re-summed: 188 rows / 180
+trades / 77W-103L / +$57.62 (was 187/179/77W-102L/+$62.62; 62.62 - 5.00
+= 57.62). Side split: no 133/125/56W-69L/+$7.99 (adds 36e8); yes
+55/55/21W-34L/+$49.63 (unchanged). Check: 7.99 + 49.63 = 57.62.
+Sub-class: countable-metric (third-party riding seat model). Ruling: no
+boundary change. The veto was RIGHT. The estimate was wrong because it
+leaned on a proportional riding model. The fix is the riding-level
+extension to ruling 3 in the AfD audit section. Full grading in
+RETRO-20261006-1230.
