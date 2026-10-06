@@ -5801,6 +5801,22 @@ the post-topic analogues for the base rate and state that n. Here that
 was 0/2 (Charles Apr 2026, Beijing May 2026), Laplace 0.25, not the
 0/5 the note implied. The market's 0.315 sat nearer that honest read.
 
+**Fourth occasion, first rally (RETRO-20261006-0615, Trump Nebraska Oct
+5).** Two No-side rows were blocked at the 0.10 boundary, and both resolved
+Yes: "Hell" 10+ (`c80e6add58d8`, own 0.50 vs mid 0.645, CF -$5.00) and "Egg"
+(`ad6dd7605658`, own 0.40 vs 0.605, CF -$5.00). Tally now: 3W/3L, -$1.80,
+across two speaker-venue-days (Xi Sep 24 ceremonial, Nebraska Oct 5 rally).
+The row count is met, but the 3-day requirement is not. The boundary
+stands, and on this evidence it is earning its keep. **Rule, truncated
+transcripts:** both reads leaned on Factba.se partials cut off at 30-37
+minutes of ~80-minute speeches. An analogue covering less than ~60% of its
+speech is not a zero for an absent word, because it speaks only for the
+fraction observed. For an N+ count, its scaled count is a floor with a wider
+range, not a centre. When a No-side read rests mainly on truncated
+partials, record est within 0.10 of the mid and put the raw read in the
+note as "partial view: X". This is n=2 on one occasion, so it is
+provisional recording discipline.
+
 ## First bet in 13 days: the AfD Sachsen-Anhalt audit (DEEP-2026-08-24)
 
 The 2026-08-24 03:11Z cycle placed de95e5168de3 ($5 No @0.66, edge 0.05,
@@ -7393,3 +7409,24 @@ past-event bracket where the book saw data I did not). Ruling: no
 boundary change. The veto was RIGHT, but the estimate was wrong. The new
 past-event-bracket weighting rule in the fact-finality section is the
 fix. Full grading in RETRO-20261005-2205.
+
+## 2026-10-06 06:15Z update: two `outside-view-veto` rows settled (Trump Nebraska rally Oct 5)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Trump "Hell" 10+ Nebraska (`c80e6add58d8`, outside-view) | 0.50 / 0.645 | No | +0.13 | Yes | **-5.00** |
+| Trump "Egg" Nebraska (`ad6dd7605658`, outside-view) | 0.40 / 0.605 | No | +0.19 | Yes | **-5.00** |
+
+Fills: c80e No at 0.37 (1 - 0.63 bid), ad6d No at 0.41 (1 - 0.59 bid).
+Both said, so both $5 stakes are lost. Post-restart mechanical ledger
+(`core/counterfactual.py ledger --skip-reason outside-view-veto`): 12 rows
+/ 12 trades / 6W-6L / -$14.79 / dBrier +0.0375 (was 10/10/6W-4L/-$4.79),
+side no 9/9/3W-6L/-$25.22. Pre-restart hand total re-summed: 187 rows /
+179 trades / 77W-102L / +$62.62 (was 185/177/77W-100L/+$72.62; 72.62 -
+10.00 = 62.62). Side split: no 132/124/56W-68L/+$12.99 (adds c80e, ad6d);
+yes 55/55/21W-34L/+$49.63 (unchanged). Check: 12.99 + 49.63 = 62.62.
+Sub-class: countable-metric (speaker-only word counts from truncated
+transcripts). Ruling: no boundary change. The veto was RIGHT on both. The
+estimates were wrong on the same input, and the new truncated-transcript
+rule in the utterance section is the fix. Full grading in
+RETRO-20261006-0615.
