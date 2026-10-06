@@ -56,8 +56,14 @@ Rank every candidate by WHY the market should be wrong, strongest first:
    where a liquid book sits beyond every public figure: put at least half
    the weight on the book (est >= 0.5*own + 0.5*mid). Book >= 0.90 or
    <= 0.10 means 0.7 on the book. Applies to forecasts and bets alike.
-   Tally of this shape: 1 row, book right 1/1. `bf9989621bdf` (Lula 44-47
-   mid-count, own 0.70 vs 0.87) is the next row to add when it settles.
+   Tally of this shape: 2 rows, book right 2/2. `bf9989621bdf` (Lula 44-47
+   mid-count, own 0.70 vs 0.87, actual 45.2, Yes, dBrier +0.073) was the
+   second: a 0.5 blend would have scored 0.046 and a 0.7 blend 0.033,
+   against own 0.090 and mid 0.017. **RETRO-20261006-1850: the 0.7 tier now
+   starts at a book >= 0.85 or <= 0.15** (it was 0.90/0.10), because both
+   rows would have done better with more weight on the book. A swing model
+   built from a few state partials is not a reason to stay at 0.5 while
+   the book sees the whole count.
    Below 3 rows this rule is provisional; the deep retro grades it.
    **Bracket-sibling verification / immediate-post-release-book trap
    (2026-09-11, RETRO-20260911-1244):** for a bracket-set market (CPI/PPI/
@@ -5604,6 +5610,18 @@ model read as "api view: X" in the note. A 0.6-ish mid (last week's
 0.93-vs-0.63 win) is disagreement, not certainty — the rule does not
 touch it. n=1 event; recording discipline, category bar unchanged.
 
+**RETRO-20261006-1850: a long xtracker zero streak with the poller alive
+is a real pause, not a data gap.** Musk Sep 29-Oct 6 (`520cb20aafdc`):
+the series showed 27 straight zero hours (Oct 5 12Z to Oct 6 14Z). That
+was more than double the prior max quiet run. Posting resumed at 15Z Oct
+6, nothing was backfilled, and the final was 212 (200-219). The recorded
+pooled-aligned read (0.17 on 220-239) beat the mid (0.265), while the
+backfill shade view (0.25-0.35) would have lost. Rule: do not shade
+toward a backfill on a zero streak. Count the streak as real posting
+behaviour, and use only the hours since posting resumed as the live
+rate. The liquid-book rule above still governs when a liquid sibling
+sits < 0.02 or > 0.98. n=1.
+
 ## Utterance-market base-rate gate (enacted DEEP-2026-09-12)
 
 A Yes-side BET on a say-the-word / trump-mention / vance-mention /
@@ -5899,6 +5917,15 @@ cleared 5%, FDP 2.6% did not. Answers to the two pre-registered questions:
    projection in a multi-party FPTP race gets at most 0.5 weight against
    a liquid book. Apply any incumbent or candidate shade AFTER the blend,
    never in its place. Family tally against the book is now 1W-2L.
+   **Tail clause (RETRO-20261006-1850, family 1W-3L): a seat model's
+   interval is not a probability bound.** CAQ zero seats
+   (`5dc43be02fec`): my note cited "PCQ 2022, 12.9%, 0 seats on a diffuse
+   vote" with the CAQ polling 13-15% and falling. I still capped the tail
+   at "outside the projection range" and recorded 0.10. A thin book
+   ($726) sat at 0.235. CAQ won 0, dBrier +0.225. Rule: when my own cited
+   precedent (same system, comparable vote share) produced the tail
+   outcome, record at least the midpoint of own and the book's mid, even
+   when the book is too thin for the liquid-book weighting above.
 
 **Grüne ≥7% bet (`66131e6b8f76`) settled 2026-09-07 16:14Z: Yes, WON
 +$40.05, brier_delta −0.1179 (agent beat market).** Est 0.18 vs entry
