@@ -5917,6 +5917,16 @@ cleared 5%, FDP 2.6% did not. Answers to the two pre-registered questions:
    projection in a multi-party FPTP race gets at most 0.5 weight against
    a liquid book. Apply any incumbent or candidate shade AFTER the blend,
    never in its place. Family tally against the book is now 1W-2L.
+   **Weight raised to 0.7 on the book (RETRO-20261007-0235, family
+   1W-4L).** Leduc, Hochelaga-Maisonneuve (`1d17795d7b07`), was
+   recorded a day before the extension above, so it is the first
+   out-of-sample row: Qc125 65%, own 0.74 after an incumbent shade, mid
+   0.865 on $6.1k. QS held. Brier: own 0.068, model 0.123, the 0.5/0.5
+   blend 0.059, mid 0.018. In both QS ridings the book alone beat the
+   0.5/0.5 blend. Rule: against a liquid (>= $5k) riding book, a
+   proportional-swing riding projection gets at most 0.3 weight. Any
+   incumbent shade still comes after the blend. Provisional at n=2,
+   both from one election (correlated: Qc125 under-rated QS incumbents).
    **Tail clause (RETRO-20261006-1850, family 1W-3L): a seat model's
    interval is not a probability bound.** CAQ zero seats
    (`5dc43be02fec`): my note cited "PCQ 2022, 12.9%, 0 seats on a diffuse
@@ -7521,3 +7531,22 @@ boundary change. The veto was RIGHT. The estimate was wrong because it
 leaned on a proportional riding model. The fix is the riding-level
 extension to ruling 3 in the AfD audit section. Full grading in
 RETRO-20261006-1230.
+
+## 2026-10-07 02:35Z update: one `wide-spread-veto` row settled (Leduc, Hochelaga-Maisonneuve)
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| Leduc wins Hochelaga-Maisonneuve (`1d17795d7b07`, wide-spread) | 0.74 / 0.865 | No | +0.08 | Yes | **-5.00** |
+
+Fill: No at 0.18 (1 - 0.82 bid). Leduc won, so the $5 is lost.
+Post-restart mechanical ledger (`core/counterfactual.py ledger
+--skip-reason wide-spread-veto`): 6 rows / 5 trades / 3W-2L / +$15.64 /
+dBrier -0.0255 (was 5/4/3W-1L/+$20.64/-0.0405), side no 4/3/2W-1L/+$0.64.
+Pre-restart hand total re-summed: 28 rows / 25 trades / 14W-11L / -$9.41
+(was 27/24/14W-10L/-$4.41; -4.41 - 5.00 = -9.41). Side split: no
+17/14/7W-7L/-$19.16 (adds 1d17); yes 11/11/7W-4L/+$9.75 (unchanged).
+Check: -19.16 + 9.75 = -9.41. Sub-class: countable-metric (third-party
+riding seat model). Ruling: no boundary change. The veto was RIGHT, and
+the estimate was wrong the same way as Jean-Lesage. The fix is the 0.7
+book weight added to ruling 3's riding-level extension. Full grading in
+RETRO-20261007-0235.
